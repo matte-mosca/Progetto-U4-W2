@@ -21,7 +21,8 @@ public class Application {
         Scanner scanner = new Scanner(System.in);
         Archive archive = new Archive();
 
-
+        logger.info(archive.toString());
+        logger.info("Insert the book's code you want to add");
 
        int ISBN = 0;
        while (true) {
@@ -69,13 +70,18 @@ public class Application {
            logger.info("Element to add: ");
            logger.info(add.toString());
            archive.addElement(add);
-
-
-
-
        }
+
        logger.info(archive.toString());
+
+       // search e remove test
+        logger.info("Choose by code which element you wanto to remove.");
+        ISBN = scanner.nextInt();
+        archive.removeElement(archive.searchByISBN(ISBN));
+
+        logger.info("New archive");
+        logger.info(archive.toString());
+
+
     }
-
-
 }
