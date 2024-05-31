@@ -2,6 +2,7 @@ package entities;
 
 import com.github.javafaker.Faker;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -13,7 +14,7 @@ public class Archive {
 
     public Archive(){
         content = new HashMap<>();
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 10; i++) {
             Item newItem = faker.random().nextBoolean() ?
                     new Book(
                             faker.random().nextInt(0 ,1111),
@@ -61,4 +62,20 @@ public class Archive {
             System.out.println("There are no elements with this code.");
         }
     }
+
+    public ArrayList<Item> searchByPubYear (int year) {
+        return (ArrayList<Item>) content.values().stream()
+                .filter(item -> item instanceof Book && ((Book) item).getPubblicationYear() == year)
+                .collect(Collectors.toList());
+    }
+    public ArrayList<Item> searchByAuthor (String author){
+        return (ArrayList<Item>) content.values().stream()
+                .filter(item -> item instanceof Book && ((Book) item).getAuthor().equals(author))
+                .collect(Collectors.toList());
+    }
+    public Item searchByISBN(int isbn) {
+        return content.get(isbn);
+    }
+    
+
 }

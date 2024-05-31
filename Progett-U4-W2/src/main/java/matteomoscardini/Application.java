@@ -47,7 +47,7 @@ public class Application {
        }
        if (choice) {
            Book add = new Book(
-                   faker.random().nextInt(0,1111),
+                   ISBN,
                    faker.book().title(),
                    faker.random().nextInt(1600, 2024),
                    faker.random().nextInt(80, 900),
@@ -60,7 +60,7 @@ public class Application {
        }
        else {
            Magazine add = new Magazine(
-                   faker.random().nextInt(1, 1111),
+                   ISBN,
                    faker.book().title(),
                    faker.random().nextInt(80, 900),
                    faker.random().nextInt(2000, 2024),
@@ -69,11 +69,12 @@ public class Application {
            logger.info("Element to add: ");
            logger.info(add.toString());
            archive.addElement(add);
-           logger.info(archive.toString());
+
 
 
 
        }
+       logger.info(archive.toString());
     }
 
 
