@@ -1,4 +1,6 @@
-public class Book extends Item{
+package entities;
+
+public class Book extends Item {
     private String author;
     private String genre;
 

@@ -1,3 +1,5 @@
+package entities;
+
 public class Magazine extends Item {
     private PublicationFrequency publicationFrequency;
 

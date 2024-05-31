@@ -1,3 +1,5 @@
+package entities;
+
 public class Item {
     private int ISBN;
     private String title;
@@ -5,7 +7,7 @@ public class Item {
     private int pagesNumber;
 
     public Item(int ISBN, String title, int pubblicationYear, int pagesNumber){
-        this.ISBN = ISBN;
+        this.ISBN = 1111;
         this.title = title;
         this.pubblicationYear = pubblicationYear;
         this.pagesNumber = pagesNumber;
